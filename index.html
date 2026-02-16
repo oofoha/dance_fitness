@@ -1,196 +1,231 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Music, HeartPulse, Users } from "lucide-react";
-import { Helmet } from "react-helmet";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dance Fitness Instructor for Hire | High-Energy Group Exercise & Dance Cardio</title>
+  <meta name="description" content="Professional dance fitness instructor offering high-energy group exercise and dance cardio classes. Available for studio hire, guest instruction, and fitness events." />
+  <meta name="keywords" content="dance fitness instructor for hire, group exercise instructor, dance cardio teacher, fitness studio instructor, high energy workout class, studio fitness hire" />
 
-export default function DanceCardioOnePageSite() {
-  return (
-    <div className="bg-white text-black font-sans">
-      {/* SEO Optimization */}
-      <Helmet>
-        <title>Dance Fitness Instructor for Hire | High-Energy Group Exercise & Dance Cardio</title>
-        <meta
-          name="description"
-          content="Professional dance fitness instructor offering high-energy group exercise and dance cardio classes. Available for studio hire, guest instruction, and fitness events."
-        />
-        <meta
-          name="keywords"
-          content="dance fitness instructor for hire, group exercise instructor, dance cardio teacher, fitness studio instructor, high energy workout class, studio fitness hire"
-        />
-        <html lang="en" />
-      </Helmet>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #ffffff;
+      color: #000000;
+      line-height: 1.6;
+    }
 
-      {/* HERO */}
-      <header className="min-h-screen flex flex-col justify-center items-center text-center px-6 relative overflow-hidden" role="banner">
-        <div className="absolute top-10 left-10 w-24 h-24 bg-fuchsia-500 rounded-full blur-2xl opacity-40" aria-hidden="true" />
-        <div className="absolute bottom-10 right-10 w-32 h-32 bg-orange-400 rounded-full blur-2xl opacity-40" aria-hidden="true" />
+    h1, h2, h3 {
+      margin: 0 0 20px 0;
+      font-weight: 800;
+    }
 
-        <motion.h1
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-5xl md:text-7xl font-extrabold leading-tight"
-        >
-          Dance Fitness Instructor for Hire
-          <span className="block text-fuchsia-600">SWEAT. SMILE. SLAY.</span>
-        </motion.h1>
+    section {
+      padding: 80px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
 
-        <p className="mt-6 max-w-2xl text-lg md:text-xl">
-          High-energy dance cardio classes that feel like a party and deliver
-          real results. Available for fitness studios, private events, and
-          group exercise programming.
-        </p>
+    .hero {
+      text-align: center;
+      padding: 120px 20px;
+      position: relative;
+      overflow: hidden;
+    }
 
-        <div className="mt-8">
-          <Button
-            className="bg-fuchsia-600 hover:bg-fuchsia-700 focus:ring-4 focus:ring-fuchsia-300 text-white rounded-2xl px-8 py-6 text-lg shadow-lg"
-            aria-label="Book dance fitness instructor"
-          >
-            Book for Your Studio
-          </Button>
+    .accent-circle {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.3;
+      z-index: 0;
+    }
+
+    .fuchsia { background: #d946ef; }
+    .orange { background: #fb923c; }
+    .pink { background: #ec4899; }
+
+    .circle1 { width: 150px; height: 150px; top: 40px; left: 40px; }
+    .circle2 { width: 200px; height: 200px; bottom: 40px; right: 40px; }
+
+    .hero h1 span {
+      color: #d946ef;
+      display: block;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #d946ef;
+      color: #ffffff;
+      padding: 16px 32px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 30px;
+    }
+
+    .btn:hover,
+    .btn:focus {
+      background: #c026d3;
+      outline: 3px solid #f0abfc;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 60px;
+      align-items: center;
+    }
+
+    .photo-placeholder {
+      height: 400px;
+      background: #f3f4f6;
+      border: 4px solid #d946ef;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      color: #6b7280;
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      text-align: center;
+    }
+
+    .card {
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    }
+
+    .card h3 { margin-top: 10px; }
+
+    .signup {
+      text-align: center;
+      background: linear-gradient(to right, rgba(217,70,239,0.08), rgba(251,146,60,0.08), rgba(236,72,153,0.08));
+      border-radius: 20px;
+    }
+
+    input[type="email"] {
+      padding: 14px;
+      width: 100%;
+      max-width: 400px;
+      border-radius: 10px;
+      border: 2px solid #000;
+      margin-top: 10px;
+    }
+
+    input[type="email"]:focus {
+      outline: 3px solid #f0abfc;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      border-top: 3px solid #d946ef;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+  <header class="hero" role="banner">
+    <div class="accent-circle fuchsia circle1"></div>
+    <div class="accent-circle orange circle2"></div>
+
+    <h1>
+      Dance Fitness Instructor for Hire
+      <span>SWEAT. SMILE. SLAY.</span>
+    </h1>
+
+    <p>
+      High-energy dance cardio classes that feel like a party and deliver real results.
+      Available for fitness studios, private events, and group exercise programming.
+    </p>
+
+    <a href="#contact" class="btn" aria-label="Book dance fitness instructor">Book for Your Studio</a>
+  </header>
+
+  <main role="main">
+
+    <!-- ABOUT ME -->
+    <section aria-labelledby="about-heading">
+      <div class="about-grid">
+        <div class="photo-placeholder" role="img" aria-label="Instructor photo placeholder">
+          Instructor Photo
         </div>
-      </header>
 
-      <main role="main">
-        {/* ABOUT ME SECTION */}
-        <section
-          className="py-24 px-6 max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center"
-          aria-labelledby="about-me-heading"
-        >
-          {/* Photo Placeholder */}
-          <div className="relative">
-            <div
-              className="absolute -top-6 -left-6 w-full h-full bg-gradient-to-br from-fuchsia-500 via-orange-400 to-pink-500 rounded-2xl opacity-20"
-              aria-hidden="true"
-            />
-            <div className="relative rounded-2xl shadow-2xl w-full h-[450px] bg-gray-100 flex items-center justify-center border-2 border-fuchsia-500">
-              <span className="text-gray-500">Instructor Photo Placeholder</span>
-            </div>
-          </div>
-
-          {/* About Content */}
-          <div>
-            <h2 id="about-me-heading" className="text-4xl md:text-5xl font-extrabold mb-6">
-              About Me
-            </h2>
-            <p className="text-lg mb-6">
-              I’m a certified group fitness instructor who believes movement
-              should feel empowering, energizing, and joyful. My dance cardio
-              classes blend high-energy music, easy-to-follow choreography,
-              and community-driven motivation.
-            </p>
-            <p className="text-lg mb-6">
-              I partner with fitness studios to create dynamic programming
-              that boosts attendance, increases member retention, and keeps
-              clients excited to come back week after week.
-            </p>
-            <ul className="space-y-3 text-lg">
-              <li>• Certified Group Fitness Instructor</li>
-              <li>• Experienced in studio & event programming</li>
-              <li>• Inclusive, scalable class design</li>
-              <li>• High-energy, confidence-building coaching style</li>
-            </ul>
-          </div>
-        </section>
-
-        {/* BENEFITS */}
-        <section
-          className="py-20 px-6 bg-white"
-          aria-labelledby="benefits-heading"
-        >
-          <h2 id="benefits-heading" className="text-4xl font-bold text-center mb-14">
-            Why Studios Love This Class
-          </h2>
-          <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
-            <Card className="rounded-2xl shadow-xl border-0">
-              <CardContent className="p-8 text-center">
-                <Music className="mx-auto mb-4 text-fuchsia-600" size={40} aria-hidden="true" />
-                <h3 className="text-xl font-semibold mb-2">High Energy Experience</h3>
-                <p>
-                  Carefully curated playlists and dynamic choreography that
-                  keep members engaged from warm-up to cooldown.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="rounded-2xl shadow-xl border-0">
-              <CardContent className="p-8 text-center">
-                <HeartPulse className="mx-auto mb-4 text-orange-500" size={40} aria-hidden="true" />
-                <h3 className="text-xl font-semibold mb-2">Results-Driven Cardio</h3>
-                <p>
-                  Effective calorie-burning dance cardio workouts that improve
-                  endurance and overall fitness.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="rounded-2xl shadow-xl border-0">
-              <CardContent className="p-8 text-center">
-                <Users className="mx-auto mb-4 text-pink-500" size={40} aria-hidden="true" />
-                <h3 className="text-xl font-semibold mb-2">Member Retention</h3>
-                <p>
-                  Inclusive instruction style that builds confidence,
-                  community, and repeat attendance.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
-
-        {/* EMAIL SIGNUP */}
-        <section
-          className="py-24 px-6 text-center bg-white relative overflow-hidden"
-          aria-labelledby="signup-heading"
-        >
-          <div
-            className="absolute inset-0 bg-gradient-to-r from-fuchsia-500 via-orange-400 to-pink-500 opacity-10"
-            aria-hidden="true"
-          />
-
-          <h2 id="signup-heading" className="text-4xl md:text-5xl font-extrabold mb-6 relative">
-            Stay Updated
-          </h2>
-          <p className="text-lg mb-8 max-w-2xl mx-auto relative">
-            Studio owners and event organizers — subscribe to receive booking
-            availability, new class formats, and collaboration opportunities.
+        <div>
+          <h2 id="about-heading">About Me</h2>
+          <p>
+            I’m a certified group fitness instructor who believes movement should feel
+            empowering, energizing, and joyful. My dance cardio classes blend high-energy
+            music, easy-to-follow choreography, and community-driven motivation.
           </p>
+          <p>
+            I partner with fitness studios to create dynamic programming that boosts
+            attendance, increases member retention, and keeps clients excited to return
+            week after week.
+          </p>
+          <ul>
+            <li>Certified Group Fitness Instructor</li>
+            <li>Experienced in studio & event programming</li>
+            <li>Inclusive, scalable class design</li>
+            <li>High-energy, confidence-building coaching style</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-          <form
-            className="max-w-xl mx-auto flex flex-col sm:flex-row gap-4 relative"
-            aria-label="Email subscription form"
-          >
-            <div className="flex-1 text-left">
-              <label htmlFor="email" className="block text-sm font-semibold mb-2">
-                Email Address
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                required
-                aria-required="true"
-                className="w-full border-2 border-black rounded-xl px-4 py-3 focus:outline-none focus:ring-4 focus:ring-fuchsia-300"
-                placeholder="you@studio.com"
-              />
-            </div>
+    <!-- BENEFITS -->
+    <section aria-labelledby="benefits-heading">
+      <h2 id="benefits-heading" style="text-align:center;">Why Studios Love This Class</h2>
+      <div class="benefits-grid">
+        <div class="card" style="border-top: 6px solid #d946ef;">
+          <h3>High Energy Experience</h3>
+          <p>Dynamic choreography and curated playlists that keep members engaged.</p>
+        </div>
+        <div class="card" style="border-top: 6px solid #fb923c;">
+          <h3>Results-Driven Cardio</h3>
+          <p>Effective calorie-burning workouts that improve endurance and overall fitness.</p>
+        </div>
+        <div class="card" style="border-top: 6px solid #ec4899;">
+          <h3>Member Retention</h3>
+          <p>Inclusive instruction style that builds confidence and community.</p>
+        </div>
+      </div>
+    </section>
 
-            <div className="flex items-end">
-              <Button
-                type="submit"
-                className="bg-orange-400 hover:bg-orange-500 focus:ring-4 focus:ring-orange-300 text-black rounded-2xl px-8 py-6 text-lg shadow-xl"
-              >
-                Subscribe
-              </Button>
-            </div>
-          </form>
-        </section>
-      </main>
+    <!-- EMAIL SIGNUP -->
+    <section class="signup" id="contact" aria-labelledby="signup-heading">
+      <h2 id="signup-heading">Stay Updated</h2>
+      <p>
+        Studio owners and event organizers — subscribe to receive booking
+        availability and collaboration opportunities.
+      </p>
 
-      <footer className="py-8 text-center text-sm border-t border-fuchsia-500" role="contentinfo">
-        © 2026 Dance Fitness Instructor. All Rights Reserved · Available for Studio Hire & Events
-      </footer>
-    </div>
-  );
-}
+      <form aria-label="Email subscription form">
+        <label for="email"><strong>Email Address</strong></label><br />
+        <input type="email" id="email" name="email" required placeholder="you@studio.com" />
+        <br /><br />
+        <button type="submit" class="btn" style="background:#fb923c; color:#000;">
+          Subscribe
+        </button>
+      </form>
+    </section>
+
+  </main>
+
+  <footer role="contentinfo">
+    © 2026 Dance Fitness Instructor · Available for Studio Hire & Events
+  </footer>
+
+</body>
+</html>
+
