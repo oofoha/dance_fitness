@@ -110,6 +110,11 @@
       border-radius: 20px;
     }
 
+    .contact-section {
+      background: #ffffff;
+      border-top: 4px solid #d946ef;
+    }
+    
     input[type="email"] {
       padding: 14px;
       width: 100%;
@@ -140,13 +145,13 @@
     <div class="accent-circle orange circle2"></div>
 
     <h1>
-      Dance Fitness Instructor for Hire
-      <span>SWEAT. SMILE. SLAY.</span>
+      Dance Fitness with Oluchi
+      <span>SWEAT. SMILE. REPEAT.</span>
     </h1>
 
     <p>
       High-energy dance cardio classes that feel like a party and deliver real results.
-      Available for fitness studios, private events, and group exercise programming.
+      Available for dance and fitness studios, private events, and group exercise programming.
     </p>
 
     <a href="#contact" class="btn" aria-label="Book dance fitness instructor">Book for Your Studio</a>
@@ -164,18 +169,17 @@
         <div>
           <h2 id="about-heading">About Me</h2>
           <p>
-            I’m a certified group fitness instructor who believes movement should feel
-            empowering, energizing, and joyful. My dance cardio classes blend high-energy
-            music, easy-to-follow choreography, and community-driven motivation.
+            I’m a certified group fitness instructor who believes fitness can be fun, joyful, and energizing. My dance cardio classes blend high-energy
+            music, easy-to-follow choreography, and a focus on creating enjoyable experiences for participants.
           </p>
           <p>
-            I partner with fitness studios to create dynamic programming that boosts
-            attendance, increases member retention, and keeps clients excited to return
+            I work with dance and fitness studios to create dynamic programming that boosts
+            attendance, increases retention, and keeps clients excited to return
             week after week.
           </p>
           <ul>
             <li>Certified Group Fitness Instructor</li>
-            <li>Experienced in studio & event programming</li>
+            <li>Experienced in studio & event environments</li>
             <li>Inclusive, scalable class design</li>
             <li>High-energy, confidence-building coaching style</li>
           </ul>
@@ -189,25 +193,58 @@
       <div class="benefits-grid">
         <div class="card" style="border-top: 6px solid #d946ef;">
           <h3>High Energy Experience</h3>
-          <p>Dynamic choreography and curated playlists that keep members engaged.</p>
+          <p>Fun and dynamic choreography that keeps participants engaged.</p>
         </div>
         <div class="card" style="border-top: 6px solid #fb923c;">
           <h3>Results-Driven Cardio</h3>
-          <p>Effective calorie-burning workouts that improve endurance and overall fitness.</p>
+          <p>Effective calorie-burning workouts that improve overall fitness.</p>
         </div>
         <div class="card" style="border-top: 6px solid #ec4899;">
-          <h3>Member Retention</h3>
-          <p>Inclusive instruction style that builds confidence and community.</p>
+          <h3>Participant-Centered Design</h3>
+          <p>Inclusive instruction that builds confidence and community.</p>
         </div>
       </div>
     </section>
+    
+<!-- CONTACT SECTION -->
+    <section class="contact-section" id="contact" aria-labelledby="contact-heading">
+      <h2 id="contact-heading" style="text-align:center;">Contact Me</h2>
+      <p style="text-align:center; max-width:700px; margin:auto;">
+        Interested in partnerships, collaborations, corporate wellness events,
+        or hiring me for your studio or special event? Let’s connect.
+      </p>     
 
+      <form aria-label="Contact form for partnerships and bookings">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="inquiry-type">Type of Inquiry</label>
+        <select id="inquiry-type" name="inquiry-type" required>
+          <option value="">Select an option</option>
+          <option value="studio-hire">Studio Hire</option>
+          <option value="event">Event Booking</option>
+          <option value="corporate">Corporate Wellness</option>
+          <option value="collaboration">Brand Collaboration</option>
+          <option value="other">Other</option>
+        </select>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <button type="submit" class="btn" style="margin-top:30px;">
+          Send Message
+        </button>
+      </form>
+    </section>
+    
     <!-- EMAIL SIGNUP -->
     <section class="signup" id="contact" aria-labelledby="signup-heading">
       <h2 id="signup-heading">Stay Updated</h2>
       <p>
-        Studio owners and event organizers — subscribe to receive booking
-        availability and collaboration opportunities.
+        Subscribe to receive updates on where I'll be next.
       </p>
 
       <form aria-label="Email subscription form">
@@ -223,7 +260,7 @@
   </main>
 
   <footer role="contentinfo">
-    © 2026 Dance Fitness Instructor · Available for Studio Hire & Events
+    © 2026 Dance Fitness With Oluchi
   </footer>
 
 </body>
